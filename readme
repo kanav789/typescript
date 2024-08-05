@@ -13,3 +13,5 @@
 # TypeScript checks error in program before execution ,at the time of implementation.
 
 # TypeScript preserve the runtime behaviour of javascript.For Example , dividng by zero in javascript produces "Infinity" instead of throwing a runtime exception.
+
+# So ,Basically its check the type of the variable, if the value of variable is given then its okey but if the value is not given. so at that time compiler confused to find the type of declare variable.
