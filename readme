@@ -1,0 +1,15 @@
+<!-- Javascript -->
+
+# Javascript (also known as ecmaScript) started its life as a simple scripting language for browser.
+
+# At the time ,when javascript is invented, it was expected to used for short snippets of embedded in web page.
+
+# Over time, though, JS became more and more popular, and web developers started using it to create interactive experiences.
+
+<!-- TypeScript -->
+
+# TypeScript is a programming language which is build on javascript.
+
+# TypeScript checks error in program before execution ,at the time of implementation.
+
+# TypeScript preserve the runtime behaviour of javascript.For Example , dividng by zero in javascript produces "Infinity" instead of throwing a runtime exception.
