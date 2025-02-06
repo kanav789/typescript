@@ -1,53 +1,129 @@
 import React from 'react'
 
-function HangmanDrawing() {
-
-  const HEAD=(
-    <div style={{width:"50px", height:"50px", borderRadius:"100%",border:"10px solid gray", position:"absolute", top:"50px", right:"-30px"}}/>
-  
-  )
-  const BODY=(
-    <div style={{width:"10px", height:"100px",  position:"absolute", top:"120px", background:"gray",right:"0px"}}/>
-  
-  )
-  const RIGHT_ARM=(
-    <div style={{width:"100px", height:"10px",  position:"absolute", top:"150px", background:"gray", right:"-100px", rotate:"-30deg", transformOrigin:"left bottom"}}/>
-  
-  )
-  const LEFT_ARM=(
-    <div style={{width:"100px", height:"10px",  position:"absolute", top:"150px", background:"gray", right:"10px", rotate:"30deg", transformOrigin:"right bottom"}}/>
-  
-  )
-  const RIGHT_LEG=(
-    <div style={{width:"100px", height:"10px",  position:"absolute", top:"210px", background:"gray", right:"-90px", rotate:"60deg", transformOrigin:"left bottom"}}/>
-  
-  )
-  const LEFT_LEG=(
-    <div style={{width:"100px", height:"10px",  position:"absolute", top:"210px", background:"gray", right:"0px", rotate:"-60deg", transformOrigin:"right bottom"}}/>
-  
-  )
 
 
+
+function HangmanDrawing({ numberOfGuesses }) {
+  const HEAD = (
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        borderRadius: "100%",
+        border: "10px solid gray",
+        position: "absolute",
+        top: "50px",
+        right: "-30px",
+      }}
+    />
+  );
+  const BODY = (
+    <div
+      style={{
+        width: "10px",
+        height: "100px",
+        position: "absolute",
+        top: "120px",
+        background: "gray",
+        right: "0px",
+      }}
+    />
+  );
+  const RIGHT_ARM = (
+    <div
+      style={{
+        width: "100px",
+        height: "10px",
+        position: "absolute",
+        top: "150px",
+        background: "gray",
+        right: "-100px",
+        rotate: "-30deg",
+        transformOrigin: "left bottom",
+      }}
+    />
+  );
+  const LEFT_ARM = (
+    <div
+      style={{
+        width: "100px",
+        height: "10px",
+        position: "absolute",
+        top: "150px",
+        background: "gray",
+        right: "10px",
+        rotate: "30deg",
+        transformOrigin: "right bottom",
+      }}
+    />
+  );
+  const RIGHT_LEG = (
+    <div
+      style={{
+        width: "100px",
+        height: "10px",
+        position: "absolute",
+        top: "210px",
+        background: "gray",
+        right: "-90px",
+        rotate: "60deg",
+        transformOrigin: "left bottom",
+      }}
+    />
+  );
+  const LEFT_LEG = (
+    <div
+      style={{
+        width: "100px",
+        height: "10px",
+        position: "absolute",
+        top: "210px",
+        background: "gray",
+        right: "0px",
+        rotate: "-60deg",
+        transformOrigin: "right bottom",
+      }}
+    />
+  );
+
+  type HangmanDrawingProps = {
+    numberOfGuesses: number;
+  };
+  const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG];
   return (
-    <div style={{position:"relative"}}>
-       {HEAD}
-       {BODY}
-       {RIGHT_ARM}
-       {LEFT_ARM}
-       {RIGHT_LEG}
-       {LEFT_LEG}
-      <div style={{height:"50px", width:"10px", background:"gray", position:"absolute", top:0, right:0}}/>
-     
+    <div style={{ position: "relative" }}>
+      {BODY_PARTS.slice(0, numberOfGuesses)}
+      <div
+        style={{
+          height: "50px",
+          width: "10px",
+          background: "gray",
+          position: "absolute",
+          top: 0,
+          right: 0,
+        }}
+      />
 
-      <div style={{height:"10px", width:"200px", background:"gray", marginLeft:"120px"}}/>
+      <div
+        style={{
+          height: "10px",
+          width: "200px",
+          background: "gray",
+          marginLeft: "120px",
+        }}
+      />
 
-      <div style={{height:"400px", width:"10px", background:"gray", marginLeft:"120px"}}/>
-      <div style={{height:"10px", width:"250px", background:"gray"}}/>
-
-
-
+      <div
+        style={{
+          height: "400px",
+          width: "10px",
+          background: "gray",
+          marginLeft: "120px",
+        }}
+      />
+      <div style={{ height: "10px", width: "250px", background: "gray" }} />
     </div>
-  )
+  );
 }
 
 export default HangmanDrawing
