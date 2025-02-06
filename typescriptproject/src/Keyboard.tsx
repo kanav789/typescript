@@ -1,5 +1,15 @@
+import { Key } from "react";
 import "./Keyboardcssmodule.css";
-function Keyboard() {
+type KeyboardProps = {
+  activeLetter: string[];
+  inactiveLetters: string[];
+  addGuessedLetter: (letter: string) => void;
+};
+function Keyboard({
+  activeLetter,
+  inactiveLetters,
+  addGuessedLetter,
+}: KeyboardProps) {
   const KEYS = [
     "A",
     "B",
@@ -39,6 +49,7 @@ function Keyboard() {
       {KEYS.map((key, ind) => {
         return (
           <button
+            onClick={() => addGuessedLetter(key)}
             className=".btn"
             style={
               {

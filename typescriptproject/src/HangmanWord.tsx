@@ -1,6 +1,8 @@
-function HangmanWord() {
-  const word = "Kanav";
-  const guessedword = ["a", "e", "x"];
+type HangmanWordProps = {
+  guessedLetters: String[];
+  wordtoGuess: String;
+};
+function HangmanWord({ guessedLetters, wordtoGuess }: HangmanWordProps) {
   return (
     <div
       style={{
@@ -12,11 +14,13 @@ function HangmanWord() {
         fontFamily: "monospace",
       }}
     >
-      {word.split("").map((letter, index) => (
+      {wordtoGuess.split("").map((letter, index) => (
         <span style={{ borderBottom: ".1em solid gray" }} key={index}>
           <span
             style={{
-              visibility: guessedword.includes(letter) ? "visible" : "hidden",
+              visibility: guessedLetters.includes(letter)
+                ? "visible"
+                : "hidden",
             }}
           >
             {letter}
